@@ -3,12 +3,12 @@ body, html{
 }
 body{
   margin: 0px;
-  background-image: url('resources/DanceFloorHeart.gif');
-  background-size: 100% 100%;
+  
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
+  perspective: 72px;
 }
 .title, .addDancerButton, .addBananaDancerButton, 
 .addPickleDancerButton, .addBurritoDancerButton, 
@@ -31,7 +31,7 @@ body, a:link, a:visited, a:active{
 .bananaDancer{
   background-image: url('resources/dancing-banana.gif');
   position: absolute;
-  z-index: 1;
+  z-index: 100;
   width: 200px;
   height: 200px;
   transition: 7s;
@@ -39,7 +39,7 @@ body, a:link, a:visited, a:active{
 .pickleDancer{
   background-image: url('resources/dancing-pickle.gif');
   position: absolute;
-  z-index: 1;
+  z-index: 100;
   width: 200px;
   height: 200px;
   transition: 7s;
@@ -47,8 +47,16 @@ body, a:link, a:visited, a:active{
 .burritoDancer{
   background-image: url('resources/dancing-burrito.gif');
   position: absolute;
-  z-index: 1;
+  z-index: 100;
   width: 124px;
   height: 200px;
   transition: 7s;
+}
+.perspective{
+  background-image: url('resources/DanceFloorHeart.gif');
+  background-size: 100% 100%;
+  height: 100%;
+  width: auto;
+  z-index:-100;
+  transform: rotateX(25deg);
 }

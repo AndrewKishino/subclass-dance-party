@@ -54,7 +54,7 @@ $(document).ready(function(){
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
-    $('body').append(bananaDancer.$node);
+    $('.here').append(bananaDancer.$node);
     window.dancers.push(bananaDancer);
   });
 
