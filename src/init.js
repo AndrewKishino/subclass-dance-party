@@ -35,7 +35,8 @@ $(document).ready(function(){
     $('.dancer').remove();
     $('.bananaDancer').remove();
     $('.pickleDancer').remove();
-    window.dancers.pop();
+    $('.burritoDancer').remove();
+    window.dancers = [];
   });
 
 
@@ -102,11 +103,23 @@ $(document).ready(function(){
      var spacing = width/window.dancers.length;
      var lastDancerPos = 0;
 
+
      for(var i = 0; i < window.dancers.length; i++) {
       window.dancers[i].$node[0].style.top = height/2.5 + 'px';
       window.dancers[i].$node[0].style.left = lastDancerPos + 'px';
       lastDancerPos += spacing;
      }
+     var id = window.setTimeout(function() {}, 0);
+     while (id--) {
+      window.clearTimeout(id);
+     }
+  });
+
+  $(".danceOn").on("click", function(event){
+    var dance = window.dancers;
+    for(var i = 0; i < dance.length; i++){
+      dance[i].step();
+    }
   });
 });
 
