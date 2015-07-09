@@ -54,7 +54,7 @@ $(document).ready(function(){
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
-    $('.here').append(bananaDancer.$node);
+    $('body').append(bananaDancer.$node);
     window.dancers.push(bananaDancer);
   });
 
@@ -69,8 +69,8 @@ $(document).ready(function(){
     // make a dancer with a random position
 
     var pickleDancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $(".perspective").height() * Math.random(),
+      $(".perspective").width() * Math.random(),
       Math.random() * 1000
     );
     $('body').append(pickleDancer.$node);
@@ -87,8 +87,8 @@ $(document).ready(function(){
     // make a dancer with a random position
 
     var burritoDancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $(".perspective").height() * Math.random(),
+      $(".perspective").width() * Math.random(),
       Math.random() * 1000
     );
     $('body').append(burritoDancer.$node);
@@ -98,7 +98,7 @@ $(document).ready(function(){
 
   $(".lineUp").on("click", function(event){
      var height = $("body").height();
-     var width = $("body").width();
+     var width = ($("body").width())*.90;
 
      var spacing = width/window.dancers.length;
      var lastDancerPos = 0;
@@ -120,6 +120,29 @@ $(document).ready(function(){
     for(var i = 0; i < dance.length; i++){
       dance[i].step();
     }
+  });
+
+  $( "body" ).on("mouseenter", ".bananaDancer" ,function() {
+    $(this).toggleClass('rotate');
+  });
+  $( "body" ).on("mouseleave", ".bananaDancer" ,function() {
+    $(this).toggleClass('rotate');
+  });
+
+
+  $( "body" ).on("mouseenter", ".pickleDancer" ,function() {
+    $(this).toggleClass('flip');
+  });
+  $( "body" ).on("mouseleave", ".pickleDancer" ,function() {
+    $(this).toggleClass('flip');
+  });
+
+
+  $( "body" ).on("mouseenter", ".burritoDancer" ,function() {
+    $(this).toggleClass('rotate');
+  });
+  $( "body" ).on("mouseleave", ".burritoDancer" ,function() {
+    $(this).toggleClass('rotate');
   });
 });
 

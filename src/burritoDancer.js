@@ -13,8 +13,8 @@ burritoDancer.prototype.step = function(){
   // toggle() is a jQuery method to show/hide the <span> tag.
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
-  this.$node[0].style.left = $("body").width() * Math.random() + 'px';
-  this.$node[0].style.top = $("body").height() * Math.random() + 'px';
+  this.$node[0].style.left = $(".perspective").width() * Math.random() + 'px';
+  this.$node[0].style.top = $(".perspective").height() * Math.random() + 'px';
 };
 
 // burritoDancer.prototype.step = function(){
